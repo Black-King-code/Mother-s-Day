@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>เว็บนี้ทำให้แม่โดยเฉพาะ</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600;700;800&family=Sarabun:wght@400;500;600&family=Mitr:wght@500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/canvas-confetti/1.9.2/confetti.browser.min.js"></script>
+</head>
+<body>
+
+<section id="p1">
+  <div class="eye-emoji">👀</div>
+  <h1>แม่ครับ มีอะไรจะให้ดู</h1>
+  <div class="sub">ไม่ต้องตกใจ เว็บนี้ไม่มีอะไรขายครับ 😂</div>
+  <button class="btn" onclick="goTo('p2')">กดดูดิ</button>
+  <div class="scrolldown">เลื่อนลง / กดปุ่ม ↓</div>
+</section>
+
+<section id="p2">
+  <div class="phone-frame">
+    <div class="siren">🚨</div>
+    <div class="alert-title">ระบบตรวจพบว่า...</div>
+    <div class="avatar">👩</div>
+    <div class="mom-name">แม่ของผม</div>
+    <div class="alert-body">
+      มีอายุเพิ่มขึ้นอีก 1 ปี<br>
+      แต่ยังคงทำหน้าที่<br>
+      "แม่ที่ชอบบ่นลูก" ได้ดีเหมือนเดิม
+    </div>
+    <div class="status-chip"><span class="dot"></span>สถานะ: ทำงานปกติ</div>
+  </div>
+  <button class="btn" style="margin-top:34px" onclick="goTo('p3')">ไปต่อ</button>
+</section>
+
+<section id="p3">
+  <div class="dash-wrap">
+    <div class="eyebrow">Mom Analytics</div>
+    <h2>สถิติแม่ของผม</h2>
+    <table class="dash-table">
+      <thead><tr><th>รายการ</th><th>จำนวน</th></tr></thead>
+      <tbody id="dash-body">
+        <tr><td>เรียกให้ตื่น</td><td class="val" data-target="inf">0</td></tr>
+        <tr><td>ถามว่า “กินข้าวยัง”</td><td class="val" data-target="inf">0</td></tr>
+        <tr><td>บ่นเรื่องห้อง</td><td class="val" data-target="เยอะมาก">0</td></tr>
+        <tr><td>บอกให้ระวัง</td><td class="val" data-target="เยอะมาก">0</td></tr>
+        <tr><td>รักลูก</td><td class="val" data-target="inf">0</td></tr>
+      </tbody>
+    </table>
+
+    <button class="secret-btn" onclick="showFingerprint()">ดูข้อมูลลับของแม่</button>
+    <div class="fp-wrap" id="fp-wrap">
+      <div class="fp-icon" id="fp-icon">🔒</div>
+      <div class="fp-label">กดค้างไว้เพื่อยืนยันว่าเป็นแม่ตัวจริง</div>
+      <div class="fp-result" id="fp-result"></div>
+    </div>
+
+    <button class="btn" style="margin-top:28px" onclick="goTo('p4')">ไปต่อ</button>
+  </div>
+</section>
+
+<section id="p4">
+  <div class="eyebrow">สิ่งที่อยากบอก</div>
+  <div class="letter">
+    จริง ๆ ผมก็ไม่ค่อยพูดอะไรแบบนี้หรอก<br>
+    แต่ขอบคุณแม่สำหรับทุกอย่างนะ<br>
+    ขอบคุณที่คอยดูแล คอยถาม คอยบ่น 😂<br>
+    ถึงบางทีจะเถียงกันบ้าง<br>
+    แต่ผมก็รู้ว่าแม่หวังดีกับผมเสมอ
+    <div class="sign">สุขสันต์วันแม่นะครับ ❤️</div>
+  </div>
+  <button class="btn" style="margin-top:32px" onclick="goTo('p5')">ต่อไปหน้าสุดท้าย</button>
+</section>
+
+<section id="p5">
+  <h2>จบแล้วครับ 🎉</h2>
+  <p>ขอบคุณที่ดูจนจบ<br>ของขวัญไม่มีครับ เพราะเงินหมดแล้วครับ 😭<br>แต่มีอย่างหนึ่งที่ให้ได้</p>
+  <button class="heart-btn" id="heartBtn" onclick="popConfetti()">รักแม่นะครับ ❤️</button>
+  <div class="reveal" id="reveal">
+    <div class="rice-line">"ไปกินข้าวกันครับแม่" 🍚😂</div>
+    <a class="line-link" href="https://line.me/R/msg/text/?%E0%B9%84%E0%B8%9B%E0%B8%81%E0%B8%B4%E0%B8%99%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%81%E0%B8%B1%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B9%81%E0%B8%A1%E0%B9%88%20%F0%9F%8D%9A%F0%9F%98%82" target="_blank" rel="noopener">
+      ส่งข้อความไปหาแม่ทาง LINE
+    </a>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
