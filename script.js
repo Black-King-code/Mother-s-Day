@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
 /* ---------- Scroll-triggered entrance animation for each section ---------- */
 const revealTargets = document.querySelectorAll(
-  '#p1 > *, #p2 .phone-frame, #p3 .dash-wrap, #p4 .letter, #p5 h2, #p5 p, #p5 .heart-btn'
+  '#p1 > *, #p2 .phone-frame, #p3 .dash-wrap, #p4 .p4-polaroid, #p4 .letter, #p5 h2, #p5 p, #p5 .heart-btn'
 );
 revealTargets.forEach(el => el.classList.add('enter'));
 const entranceObserver = new IntersectionObserver((entries)=>{
@@ -107,6 +107,7 @@ function startHold(){
   holdTimer = setTimeout(()=>{
     fpIcon.textContent = '✅';
     fpResult.textContent = 'แม่ก็คือแม่อะครับ ❤️';
+    document.getElementById('secret-photo').classList.add('show');
     playChime();
   }, 1200);
 }
